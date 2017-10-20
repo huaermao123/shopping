@@ -1,0 +1,36 @@
+package com.neusoft.dao.impl;
+
+import java.util.List;
+
+import com.neusoft.dao.DaoException;
+import com.neusoft.dao.Product_orderinfoDao;
+import com.neusoft.entity.Product_orderinfo;
+
+public class Product_orderinfoDaoImpl implements Product_orderinfoDao {
+
+	//增加
+	@Override
+	public int insert(Product_orderinfo poder) throws DaoException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+   //删除
+	@Override
+	public int deleteP_orderDao(Integer id) throws DaoException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+  //修改
+	@Override
+	public int updateP_order(Product_orderinfo por) throws DaoException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+   //查询所有的
+	@Override
+	public List<Product_orderinfo> getP_orderList() throws DaoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

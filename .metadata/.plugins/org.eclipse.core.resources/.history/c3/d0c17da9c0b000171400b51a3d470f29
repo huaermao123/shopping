@@ -1,0 +1,24 @@
+package com.neusoft.dao;
+
+import java.util.List;
+
+import com.neusoft.entity.Address;
+
+public interface Consumer_addrDao {
+   
+	  	//添加
+		public int insertAddr(Address  addr)throws DaoException;
+		
+		//删除
+		public int deleteAddr(Integer id)throws DaoException;
+		//修改
+		public int updateAddr(Address ads) throws DaoException;
+		
+		//查询所有的
+		public List<Address> getOrderinfoList() throws DaoException;
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,17 @@
+package com.neusoft.entity;
+
+public class Shoppinginfo_consumer {
+   /*-- 买家购买信息
+	create table  shoppinginfo_consumer(
+	id       int      primary  key auto_increment,
+	aid      int   ,-- 买家账号id,依赖acount_consumer表中的id
+	nickname  varchar(20),-- 用户昵称
+	money  double,-- 订单金额
+	lasttime bigint  -- 最近消费
+	);*/
+	
+	
+    	
+	
+
+}

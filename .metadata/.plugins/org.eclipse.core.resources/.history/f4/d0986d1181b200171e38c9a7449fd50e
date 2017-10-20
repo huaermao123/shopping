@@ -1,0 +1,52 @@
+package com.neusoft.dao.impl;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.commons.dbutils.DbUtils;
+import org.apache.commons.dbutils.QueryRunner;
+
+import com.neusoft.dao.DaoException;
+import com.neusoft.dao.RuleDao;
+import com.neusoft.entity.Rule;
+import com.neusoft.utils.ConnectionFactory;
+
+public class RuleDaoImpl implements  RuleDao{
+ //增加
+	QueryRunner qr = new QueryRunner();
+	@Override
+	public int insert(Rule rule) throws DaoException {
+		//获取连接
+		  Connection conn=ConnectionFactory.getInstance().getConnection();
+		   //准备语句
+		   String sql="insert into rule(pid,size)value(?,?)";
+		   try {
+			  return qr.update(conn,sql,rule.getPid(),rule.getSize());		
+		  }catch(SQLException e) {
+			  e.printStackTrace();
+			    throw new  DaoException("添加出错",e);
+		        }finally {
+			    DbUtils.closeQuietly(conn);
+		    }
+	}
+//删除
+	@Override
+	public int deleteRuleDao(Integer id) throws DaoException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+//修改
+	@Override
+	public int updateCate(Rule cate) throws DaoException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+ //查询所有
+	@Override
+	public List<Rule> getRuleList() throws DaoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

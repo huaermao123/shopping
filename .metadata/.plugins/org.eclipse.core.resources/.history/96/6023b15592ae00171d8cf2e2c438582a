@@ -1,0 +1,52 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<form action="" method="post">
+		<div style="margin-left: 50px; padding-bottom: 10px;">
+			省份：<input type="text" name="address1"/>
+			省份：<input type="text" name="address2"/>
+			区/县：<input type="text" name="address3"/>
+			<button>添加</button>
+		</div>
+		<table  style="text-align: center;" border="1px" width="800px" height="30px">
+			<tr>
+				<td>地址id</td>
+				<td>省份</td>
+				<td>城市</td>
+				<td>区/县</td>
+				<td>操作</td>
+			</tr>
+			 <%
+			 Object obj3=request.getAttribute("cates");
+			 if(obj3!=null)
+			 {
+	        	  PageModel<Product> pageModel=(PageModel<Product>)obj3;
+	        	  for(int i=0;i<pageModel.getDatas().size();i++){
+	        		  
+	        		  %>
+			
+			<tr>
+				<td>1</td>
+				<td>重庆市</td>
+				<td>重庆市</td>
+				<td>解放碑</td>
+				<td><a href="updateAddr.jsp">修改</a>
+					
+				<a href="#">删除</a></td>
+			</tr>
+					 <%  
+	        	  }  
+	        		  
+	        	  }
+			 
+			 %>
+		</table>
+		</form>
+	</body>
+</html>

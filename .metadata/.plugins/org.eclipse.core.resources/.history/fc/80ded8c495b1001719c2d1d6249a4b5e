@@ -1,0 +1,8 @@
+package com.neusoft.entity;
+
+public class Address {
+
+	private String province ;//-- 省份
+	private String city; //-- 城市
+	private String area; //- -区/县
+}

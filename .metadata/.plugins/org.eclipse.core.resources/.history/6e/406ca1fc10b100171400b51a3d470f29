@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+*$(function(){
+ 	var cc=$("div[title$=en]").get();
+ 	console.log(cc);
+ 	for(var i=0;i<cc.length;i++){
+ 		var ccd=cc[i];
+ 		console.log(ccd);
+ 		var _style="background-color:red";
+	     ccd.setAttribute("style",_style);
+ 	}
+ 	
+ })

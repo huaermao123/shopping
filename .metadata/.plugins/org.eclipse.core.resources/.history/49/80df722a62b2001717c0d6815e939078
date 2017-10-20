@@ -1,0 +1,7 @@
+package com.neusoft.test;
+
+public class Shippinginfo_consumer {
+public static void main(String[] args) {
+	
+}
+}

@@ -1,0 +1,15 @@
+package com.neusoft.services;
+
+import com.neusoft.dao.DaoException;
+import com.neusoft.dao.impl.ConsumerDaoImpl;
+
+public class ConsumerService {
+
+	ConsumerDaoImpl cons=new ConsumerDaoImpl();
+	//É¾³ý
+	public int deleteConsumer(Integer id) throws DaoException {
+	    return cons.deleteConsumer(id);
+	}
+	//Ìí¼Ó»áÔ±
+	
+}

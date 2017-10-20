@@ -1,0 +1,72 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/Login.css" />
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+	 		<script type="text/javascript" src="js/JQuery.js" ></script>
+	 
+	</head>
+	<body>
+		
+		
+		<div id="center">
+			<form action="getAllCons" method="post">
+			<div id="table" >
+				<table  height="350px" width="360px" cellpadding="0px" cellspacing="0px">
+					<tr>
+						<td class="td01" colspan="2"><span>请登录</span>&nbsp;<a href="Register.jsp">免费注册</a> </td>
+						
+					</tr>
+					<tr>
+						<td class="td02" colspan="2">账户登录</td>
+						
+					</tr>
+					<tr>
+						<td class="td03" colspan="2"><input name="name" type="text" placeholder="18515151625" /></td>
+					</tr>
+					<tr>
+						<td class="td04" colspan="2"><input name="psw" type="password"  /></td>
+					</tr>
+					<tr>
+						<td class="td05"><input type="checkbox" name="checkbox"/>记住密码</td>
+						<td class="td06"><a href="#">忘记密码</a></td>
+					</tr>
+					<tr>
+						<td class="td07" colspan="2"><button>登录</button></td>
+					</tr>
+				</table>
+				
+			</div>
+		    </form>
+		
+		</div>
+		
+		
+		
+		<div id="wb">
+			<div id="ul">
+			<ul>
+			<li><a href="#">关于我们</a></li>
+			<li><a href="#">联系我们</a></li>
+			<li><a href="#">人才招聘</a></li>
+			<li><a href="#">商家入驻</a></li>
+			<li><a href="#">广告服务</a></li>
+			<li><a href="#">友情链接</a></li>
+		    <li><a href="#">公益活动</a></li>
+		    <li><a href="#">English Site1</a></li>
+		    <li><a href="#">广告销售</a></li>
+			<li><a href="#">友情联系</a></li>
+		    <li><a href="#">公益出资</a></li>
+		    
+			</ul>
+			<div>
+			<p>Copyright © 2004-2017  本网站 版权所有</p>
+			
+		</div>
+		
+	</body>
+</html>

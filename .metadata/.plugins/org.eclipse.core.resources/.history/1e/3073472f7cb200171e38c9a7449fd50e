@@ -1,0 +1,54 @@
+package com.neusoft.dao.impl;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.commons.dbutils.DbUtils;
+import org.apache.commons.dbutils.QueryRunner;
+
+import com.neusoft.dao.DaoException;
+import com.neusoft.dao.Product_orderinfoDao;
+import com.neusoft.entity.Product_orderinfo;
+import com.neusoft.utils.ConnectionFactory;
+
+public class Product_orderinfoDaoImpl implements Product_orderinfoDao {
+
+	QueryRunner qr = new QueryRunner();
+	//增加
+	@Override
+	public int insert(Product_orderinfo poder) throws DaoException {
+		//获取连接
+		  Connection conn=ConnectionFactory.getInstance().getConnection();
+		   //准备语句
+		   String sql="insert into product_orderinfo(orderid,productid)value(?,?)";
+		   try {
+			  return qr.update(conn,sql,poder.getOrderid(),addr.getCity(),addr.getArea());		
+		  }catch(SQLException e) {
+			  e.printStackTrace();
+			    throw new  DaoException("添加出错",e);
+		        }finally {
+			    DbUtils.closeQuietly(conn);
+		    }
+			
+	}
+   //删除
+	@Override
+	public int deleteP_orderDao(Integer id) throws DaoException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+  //修改
+	@Override
+	public int updateP_order(Product_orderinfo por) throws DaoException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+   //查询所有的
+	@Override
+	public List<Product_orderinfo> getP_orderList() throws DaoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

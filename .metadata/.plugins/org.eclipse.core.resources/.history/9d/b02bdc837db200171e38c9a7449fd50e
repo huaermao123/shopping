@@ -1,0 +1,19 @@
+package com.neusoft.test;
+
+import com.neusoft.dao.impl.Product_orderinfoDaoImpl;
+import com.neusoft.entity.Product_orderinfo;
+
+public class Test_P {
+public static void main(String[] args) {
+	insert();
+}
+//Ìí¼Ó
+public static void insert() {
+	
+		Product_orderinfo	poder=new Product_orderinfo(5,8);
+		
+		System.out.println(new  Product_orderinfoDaoImpl().insert(poder));
+	
+}
+
+}

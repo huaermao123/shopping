@@ -1,0 +1,9 @@
+package com.neusoft.test;
+
+import com.neusoft.entity.Rule;
+
+public class TestRule {
+public static void main(String[] args) {
+	Rule dd=new Rule(4,55);
+}
+}

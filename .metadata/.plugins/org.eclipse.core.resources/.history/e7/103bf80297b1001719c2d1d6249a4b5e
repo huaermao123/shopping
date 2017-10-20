@@ -1,0 +1,59 @@
+package com.neusoft.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.neusoft.entity.Address;
+import com.neusoft.entity.Product;
+
+/**
+ * Servlet implementation class AdressServlet
+ */
+@WebServlet("/AdressServlet")
+public class AdressServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public AdressServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter pw=response.getWriter();
+		
+		List<Address> ps=new ArrayList<Address>();
+		ps.add(new Address("重庆市","重庆市","渝中区"));
+		ps.add(new Address("重庆市","重庆市","黔江区"));
+		ps.add(new Address("湖北省","恩施州","建始县"));
+		ps.add(new Address("湖北省","恩施州","来凤县"));
+		ps.add(new Address("湖南省","湘西州","龙山县"));
+	
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

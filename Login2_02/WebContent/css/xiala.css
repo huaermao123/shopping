@@ -1,0 +1,23 @@
+#lb_01{
+	height: 30px;
+	width: 200px;
+	border: 1px solid red;
+}
+#lb_01 p
+{
+ 	margin-top: -30px;
+ 	margin-left: 50px;
+ 	font-size:18px ;
+ 	color: white;
+}
+#lb_01 p a{
+	text-decoration: none;
+	 	color: white;
+
+}
+#shop_class,#shop_class2{
+	height: 0px;
+	width: 0px;
+	border: 1px solid red;
+	overflow: hidden;
+}

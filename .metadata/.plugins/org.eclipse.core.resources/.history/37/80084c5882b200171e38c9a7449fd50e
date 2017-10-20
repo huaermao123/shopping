@@ -1,0 +1,34 @@
+package com.neusoft.test;
+
+import com.neusoft.dao.impl.RuleDaoImpl;
+import com.neusoft.entity.Rule;
+
+public class TestRule {
+public static void main(String[] args) {
+
+	//add();
+	del() ;
+	//update();
+	all();
+}
+//Ìí¼Ó
+public static void add() {
+	Rule dd=new Rule(4,"55m");
+	System.out.println(new RuleDaoImpl().insert(dd));
+}
+//É¾³ý
+public static void del() {
+	
+	System.out.println(new RuleDaoImpl().deleteRuleDao(1));
+}
+//ÐÞ¸Ä
+public static void update() {
+	Rule dd=new Rule(66,"55m");
+	System.out.println(new RuleDaoImpl().updateCate(dd));
+}
+//²éÑ¯
+public static void all() {
+	
+	System.out.println(new RuleDaoImpl().getRuleList());
+}
+}

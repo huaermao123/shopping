@@ -1,0 +1,25 @@
+package com.neusoft.test;
+
+import com.neusoft.dao.impl.Product_orderinfoDaoImpl;
+import com.neusoft.entity.Product_orderinfo;
+
+public class Test_P {
+public static void main(String[] args) {
+	//insert();
+	del();
+}
+//Ìí¼Ó
+public static void insert() {
+	
+		Product_orderinfo	poder=new Product_orderinfo(6,8);
+		
+		System.out.println(new  Product_orderinfoDaoImpl().insert(poder));
+	
+}
+//É¾³ý
+public static void del() {
+	System.out.println(new  Product_orderinfoDaoImpl().deleteP_orderDao(4));
+}
+//ÐÞ¸Ä
+
+}

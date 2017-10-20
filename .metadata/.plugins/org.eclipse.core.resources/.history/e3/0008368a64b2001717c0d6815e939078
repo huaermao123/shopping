@@ -1,0 +1,23 @@
+package com.neusoft.test;
+
+import com.neusoft.dao.impl.Shoppinginfo_consumerDaoImpl;
+import com.neusoft.entity.Shoppinginfo_consumer;
+
+public class Shippinginfo_consumerTest {
+	
+public static void main(String[] args) {
+	//insert();
+	del();
+}
+//添加
+public static void insert() {
+	Shoppinginfo_consumer shop=new Shoppinginfo_consumer(56,"华二达", 5455, 515151515);
+	int dd=new Shoppinginfo_consumerDaoImpl().insertShop(shop);
+	System.out.println(dd);
+}
+//删除
+public static void del() {
+	int dd=new Shoppinginfo_consumerDaoImpl().deleteShop(5);
+	System.out.println(dd);
+}
+}

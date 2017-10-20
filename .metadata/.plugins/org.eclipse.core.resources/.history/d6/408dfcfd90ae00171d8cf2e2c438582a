@@ -1,0 +1,14 @@
+package com.neusoft.services;
+
+import com.neusoft.dao.DaoException;
+import com.neusoft.dao.impl.AddressDaoImpl;
+import com.neusoft.entity.Address;
+import com.neusoft.entity.PageModel;
+
+public class getAddrByPageService {
+
+	AddressDaoImpl addr= new AddressDaoImpl();
+	public PageModel<Address> getproductByPage(int pageNo, int pageSize) throws DaoException {
+		return addr.getproductByPage(pageNo, pageSize);
+	}
+}

@@ -1,0 +1,16 @@
+package com.neusoft.test;
+
+import com.neusoft.dao.impl.Shoppinginfo_consumerDaoImpl;
+
+public class Shippinginfo_consumer {
+	
+public static void main(String[] args) {
+	insert();
+}
+//Ìí¼Ó
+public static void insert() {
+	Shippinginfo_consumer shop=new Shippinginfo_consumer();
+	      new Shoppinginfo_consumer().insertShop(shop);
+}
+
+}

@@ -1,0 +1,5 @@
+package com.nesoft.dao;
+
+public interface AconsumerDao {
+
+}

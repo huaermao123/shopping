@@ -1,0 +1,36 @@
+#geirenxx{
+	width: 200px;
+	height: 100px;
+	border: 1px solid #AAAAAA;
+	margin-left: 30px;
+	 margin-top:30px;
+	text-align: center;
+	line-height: 50px;
+
+}
+#geirenxx a{
+	color:red;
+	text-decoration: none;
+	cursor: pointer;
+}
+#_iframe{
+	margin-top: -630px;
+}
+
+/*
+ * 鍔ㄦ�佹暟鎹殑鏍峰紡锛堝垎绫伙級
+ */
+#shang_left{
+	background-color: #6E6568;
+	
+}
+#shang_left ul{
+	list-style: none;
+	text-align: center;
+	line-height: 30px;
+}
+#shang_left ul li a{
+	text-decoration: none;
+	color: white;
+}
+

@@ -1,0 +1,5 @@
+
+$(function(){
+	$("input:first").onblur();
+	$(":focus").css("background","red");
+ })

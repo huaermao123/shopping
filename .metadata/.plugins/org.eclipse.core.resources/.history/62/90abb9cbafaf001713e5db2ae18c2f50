@@ -1,0 +1,94 @@
+package com.neusoft.dao.impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.dbutils.DbUtils;
+
+import com.neusoft.dao.AconsumerDao;
+import com.neusoft.dao.DaoException;
+import com.neusoft.entity.Aconsumer;
+import com.neusoft.utils.ConnectionFactory;
+
+public class AconsumerDaoImpl implements AconsumerDao {
+	
+	//修改用户名与密码
+	@Override
+	public int updateConsumerAll(AconsumerDao ucon) throws DaoException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+  //添加注册用户
+	@Override
+	public int insertConsumer(AconsumerDao con) throws DaoException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+ //删除
+	@Override
+	public int deleteConsumer(Integer id) throws DaoException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+  //修改密码
+	@Override
+	public int updateConsumer(AconsumerDao ucon) throws DaoException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+//修该登录名
+	@Override
+	public int updateLoginname(String loginname, int id) throws DaoException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+// 查询所有的
+	@Override
+	public List<AconsumerDao> getConsumerList() throws DaoException {
+		 //获取连接
+		Connection conn=ConnectionFactory.getInstance().getConnection();
+       //准备语句
+		String sql="select id,loginname,password,registertime,lastlogintime,ip from account_consumer ";
+		System.out.println(sql);
+		List<Aconsumer> list=new  ArrayList<Aconsumer>();
+		PreparedStatement pst=null;
+		ResultSet rs=null;
+	     try {
+	    	 //step3:获取PreparedStatement,并且去发送sql
+			   pst=conn.prepareStatement(sql);
+			 //step5:发送sql
+				rs=pst.executeQuery();
+			 //step6:处理返回结果	
+				while(rs.next()) {
+					Aconsumer dd=new Aconsumer();
+					Integer id = rs.getInt(1);
+					dd.setId(id);
+					String loginname=rs.getString(2);
+					dd.setLoginname(loginname);
+					String password=rs.getString(3);
+					dd.setPassword(password);
+					Long registertime=rs.getLong(4);
+					dd.setRegistertime(registertime);
+					Long lastlogintime=rs.getLong(5);
+					dd.setLastlogintime(lastlogintime);
+					String ip=rs.getString(6);
+					dd.setIp(ip);
+					list.add(dd);
+				}
+				System.out.println(list.size());
+	     }catch(SQLException e) {
+	  			e.printStackTrace();
+	  			throw new  DaoException("查询出错",e);
+	  		}finally {
+	  			DbUtils.closeQuietly(conn);
+	  		}
+	     return list;
+	}
+
+}

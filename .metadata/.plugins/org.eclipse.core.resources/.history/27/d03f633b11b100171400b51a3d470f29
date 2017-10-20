@@ -1,0 +1,6 @@
+
+$(function(){
+ 	var cc=$("input:focus").css("background-color", "#aaa");
+
+ 	
+ })

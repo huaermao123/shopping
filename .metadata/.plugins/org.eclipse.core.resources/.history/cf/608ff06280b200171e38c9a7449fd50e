@@ -1,0 +1,35 @@
+package com.neusoft.dao.impl;
+
+import java.util.List;
+
+import com.neusoft.dao.DaoException;
+import com.neusoft.dao.RuleDao;
+import com.neusoft.entity.Rule;
+
+public class RuleDaoImpl implements  RuleDao{
+ //增加
+	@Override
+	public int insert(Rule rule) throws DaoException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+//删除
+	@Override
+	public int deleteRuleDao(Integer id) throws DaoException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+//修改
+	@Override
+	public int updateCate(Rule cate) throws DaoException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+ //查询所有
+	@Override
+	public List<Rule> getRuleList() throws DaoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

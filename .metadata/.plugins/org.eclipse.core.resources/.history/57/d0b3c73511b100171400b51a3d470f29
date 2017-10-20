@@ -1,0 +1,6 @@
+
+$(function(){
+ 	var cc=$("div:input").css("background-color", "#aaa");
+
+ 	
+ })

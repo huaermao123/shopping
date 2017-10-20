@@ -1,0 +1,16 @@
+package com.neusoft.entity;
+
+public class Consumer_addr {
+
+/*	create table consumer_addr(
+	id    int     primary key auto_increment,
+	name varchar(20) not null,-- 收货人姓名
+	addr varchar(200) not null,-- 收货人地址
+	phone varchar(20)  not null,-- 联系方式
+	provice varchar(20),  -- 省份
+	city varchar(20),-- 市
+	area varchar(40),-- 区/县
+	adder varchar(200)-- 详细信息
+	
+	);*/
+}

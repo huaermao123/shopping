@@ -1,0 +1,31 @@
+package com.neusoft.services;
+
+import com.neusoft.dao.DaoException;
+import com.neusoft.dao.impl.AddressDaoImpl;
+import com.neusoft.dao.impl.ProductDaoImpl;
+import com.neusoft.entity.Address;
+import com.neusoft.entity.PageModel;
+import com.neusoft.entity.Product;
+
+public class getAddrByPageService {
+
+	String pageNo=request.getParameter("pageNo");
+	String pageSize=request.getParameter("pageSize");
+	try {
+		int _pageNo=Integer.parseInt(pageNo);
+		int _pageSize=Integer.parseInt(pageSize);
+		
+		PageModel<Product>  cates=new ProductDaoImpl().getCatesByPage(_pageNo,_pageSize);
+		if(cates!=null) {
+			int totalPageSize= (cates.getTotalcount()%_pageSize==0?cates.getTotalcount()/_pageSize:cates.getTotalcount()/_pageSize+1);
+			cates.setTotalPageSize(totalPageSize);
+			cates.setPageNo(_pageNo);
+		}
+		
+		request.setAttribute("cates", cates);
+		request.getRequestDispatcher("product.jsp").forward(request, response);
+	}catch(NumberFormatException e) {
+		e.printStackTrace();
+	}
+	}
+}

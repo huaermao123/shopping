@@ -1,0 +1,7 @@
+package com.neusoft.dao.impl;
+
+import com.neusoft.dao.Product_orderinfoDao;
+
+public class Product_orderinfoDaoImpl implements Product_orderinfoDao {
+
+}

@@ -1,0 +1,12 @@
+INDEX VERSION 1.4+D:\LuoJiSiWei_Shoping\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+732425719.index
+3778355636.index
+4062737193.index
+10804039.index
+242877393.index
+425845949.index
+2454317942.index
+3778355636.index
+3125586672.index
+4079492467.index
+3367984778.index

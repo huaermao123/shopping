@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div style="margin-left: 50px; padding-bottom: 5px;">
+			<p>当前会员修改</p>
+		</div>
+		<form action="updateConsServlet" method="post">
+		<table style="text-align: center;" border="1px" width="800px" height="30px">
+			<tr>
+				
+				<td>会员名</td>
+				
+				<td><input type="text"/></td>
+				
+			</tr>
+			<tr>
+				<td>会员密码</td>
+				<td><input type="text"/></td>
+				
+			</tr>
+			
+			<tr>
+				
+				<td>操作</td>
+				<td><input type="submit" value="修改"/></td>
+			</tr>
+		</table>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+package com.neusoft.dao;
+
+import java.util.List;
+
+import com.neusoft.entity.Product_orderinfo;
+
+public interface Product_orderinfoDao {
+	 /**
+	   * 添加
+	   */
+		public int insert(Product_orderinfo  poder)throws DaoException;
+		
+		/**
+		 * 删除 
+		 */
+		public int deleteP_orderDao(Integer id)throws DaoException;
+		
+		
+		/**
+		 * 修改
+		 */
+		public int updateP_order(Product_orderinfo por)throws DaoException;
+
+		/**
+		 * 查询所有的
+		 */
+		public List<Product_orderinfo> getP_orderList()throws DaoException;
+		
+}

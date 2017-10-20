@@ -1,0 +1,96 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+     <%@page import="java.util.*,com.neusoft.entity.PageModel,com.neusoft.entity.Consumer"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+<!DOCTYPE html>
+<html>
+	<head>
+	<link rel="stylesheet" href="css/NewPage.css" />
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="getConsPage" method="post">
+		<div style="margin-left: 50px; padding-bottom: 10px;">
+		        会员id<input type="text" />
+			<button>添加</button>
+		</div>
+		<table  style="text-align: center;" border="1px" width="100%" height="30px">
+			<tr>
+				<td colspan="7">会员表</td>
+			</tr>
+			<tr>
+				<td>会员id</td>
+				<td>会员名</td>
+				<td>会员密码</td>
+				<td>注册时间</td>
+				<td>最后登录时间</td>
+			    <td>ip</td>
+			    <td>操作</td>
+			</tr>
+			<%
+			 Object obj4=request.getAttribute("cates");
+			 if(obj4!=null)
+			 {
+	        	  PageModel<Consumer> pageModel=(PageModel<Consumer>)obj4;
+	        	  for(int i=0;i<pageModel.getDatas().size();i++){
+	        		  
+	        		  %>
+			
+			
+			<tr>
+				<td name="bid1"><%=pageModel.getDatas().get(i).getId() %></td>
+				<td><%=pageModel.getDatas().get(i).getLoginname() %></td>
+				<td><%=pageModel.getDatas().get(i).getPassword() %></td>
+				<td><%=pageModel.getDatas().get(i).getRegistertime() %></td>
+				<td><%=pageModel.getDatas().get(i).getLastlogintime() %></td>
+			    <td><%=pageModel.getDatas().get(i).getIp() %></td>
+				<td><a href="updateCon.jsp">修改</a>
+					
+				<a onclick="javascript:window.location.href='delAddr?bid1=<%=pageModel.getDatas().get(i).getId() %>'">删除</a></td>
+			</tr>
+						 <%  
+	        	  
+	        		  
+	        	  }
+			 
+			 %>
+		</table>
+		
+			<div id="page">
+		
+			共<%=pageModel.getTotalcount() %>条记录&nbsp;<%=pageModel.getPageNo() %>/<%=pageModel.getTotalPageSize() %>页&nbsp;&nbsp;
+			<a href="getConsPage?pageNo=1&pageSize=5">首页</a>
+			<a href="getConsPage?pageNo=<%=pageModel.getPageNo()-1==0?pageModel.getPageNo():pageModel.getPageNo()-1%>&pageSize=5">下页</a>
+			<a href="getConsPage?pageNo=<%=pageModel.getPageNo()+1==pageModel.getTotalPageSize()+1?pageModel.getTotalPageSize():pageModel.getPageNo()+1 %>&pageSize=5">上页</a>
+		    <a href="getConsPage?pageNo=<%=pageModel.getTotalPageSize() %>&pageSize=5">尾页</a>&nbsp;&nbsp;
+			第&nbsp;<select onChange="if(this.value==this.options[this.options.selectedIndex].value){location='getConsPage?&pageNo='+this.value+'&pageSize=5'}">
+				
+				<% 
+				if(pageModel!=null){
+		        	   int _totalPageSize=pageModel.getTotalPageSize();
+		        	   for(int i=0;i<_totalPageSize;i++){
+		        		   
+		        		   if(pageModel.getPageNo()==(i+1)){%>
+	        		    	
+		        		    <option value="<%=i+1 %>" selected="selected"><%=(i+1)%></option>
+		        		  <%  }else{%>
+		        			  <option value="<%=i+1 %>" ><%=(i+1)%></option>
+		        		  <%}
+		        	   }
+		        	   
+				}
+				
+				
+				%>
+				
+			</select>&nbsp;页
+		</div>
+		</div>
+		
+		
+		
+	  <%}%>
+		</form>
+	</body>
+</html>

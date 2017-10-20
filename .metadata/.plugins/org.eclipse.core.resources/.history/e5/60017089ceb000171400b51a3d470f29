@@ -1,0 +1,15 @@
+package com.neusoft.test;
+
+import com.neusoft.dao.impl.Consumer_addrDaoImpl;
+import com.neusoft.entity.Consumer_addr;
+
+public class Con_Addr {
+  public static void main(String[] args) {
+	
+}
+  public static void testInsert() {
+	  Consumer_addrDaoImpl cc=new Consumer_addrDaoImpl();
+	  Consumer_addr addr=new Consumer_addr("»ª¶þÃ«");
+	  cc.insertAddr(addr);
+  }
+}

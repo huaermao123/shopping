@@ -1,0 +1,10 @@
+package com.neusoft.services;
+
+import com.neusoft.dao.impl.OrderinfoDaoImpl;
+
+public class OrderinfoService {
+
+	OrderinfoDaoImpl Order= new OrderinfoDaoImpl();
+	
+	
+}

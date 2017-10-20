@@ -1,0 +1,125 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/OrderPage.css" />
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+	</head>
+	
+ <script>
+        $(function () {
+            $.ajax({
+                url: './region.json',
+                type: 'get',
+                success: function (data) {
+                    console.log(data);
+                    //添加省
+                    var pJson = data.p["000000"];
+                    // console.log(pJson);
+                    var pOption = "";
+                    //清空下拉列表
+                    $("#p option:eq(0)").nextAll().remove();
+                    for (var k in pJson) {
+                        pOption += '<option value="' + k + '">' + pJson[k] + '</option>';
+                    }
+                    $("#p").append(pOption);
+                    //添加市
+                    $("#p").change(function () {
+                        var pVal = $(this).val();
+                        //    console.log(pVal);
+                        var cJson = data.c[pVal];
+                        // console.log(cJson);
+                        var cOption = "";
+                        //请求下拉框
+                        $("#c option:eq(0)").nextAll().remove();
+                        for (var k in cJson) {
+                            cOption += '<option value="' + k + '">' + cJson[k] +
+                                '</option>';
+                        }
+                        $("#c").append(cOption);
+                    })
+                    //添加县
+                    $("#c").change(function () {
+                        var cVal = $(this).val();
+                        //    console.log(pVal);
+                        var dJson = data.d[cVal];
+                        // console.log(cJson);
+                        var dOption = "";
+                        //清除下拉框
+                        $("#d option:eq(0)").nextAll().remove();
+                        for (var k in dJson) {
+                            dOption += '<option value="' + k + '">' + dJson[k] +
+                                '</option>';
+                        }
+                        $("#d").append(dOption);
+                    })
+                }
+            })
+          
+        })
+    </script>
+	<body>
+		
+		<div id="head_p"><p>收货的新增地址</p></div>
+		<form name="form1" method="post" action="addConsAddr">
+		<div id="Addr">
+			<div class="addr01">
+				<span>收货人</span>
+				<input name="name" type="text" placeholder="李四"/>
+				<input name="addr" type="text" placeholder="收货人地址"/>
+			</div >
+			<div  class="addr02">
+				<span>收货地址</span>
+		<select name="p" id="p">
+		
+             <option value="000000">---省---</option>
+                    
+                    
+                    
+                </select>
+        <select name="c" id="c">
+            <option value="">---市---</option>
+                
+         </select>
+        <select name="d" id="d">
+            <option value="">---县---</option>
+                 
+        </select>
+   
+			</div>
+			
+	
+			
+			<div class="addr04">
+				<span>联系电话</span>
+				<input type="text" placeholder="13212201197" />
+				
+			</div>
+			
+			<div class="addr03">
+				<span>收货时间</span>
+				<select><option>收货时间不限</option></select>
+			</div>
+			
+			<div class="addr05">
+				<span>详细地址</span>
+				<textarea></textarea>
+			</div>
+			
+			
+			<div class="addr06">
+				<button>保存</button>
+				
+			</div>
+		
+			
+			
+		</div>
+		
+		</form>
+		
+	</body>
+</html>

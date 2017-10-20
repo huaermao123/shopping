@@ -1,0 +1,8 @@
+package com.neusoft.dao;
+
+public interface Consumer_addr {
+  
+	
+	
+	
+}

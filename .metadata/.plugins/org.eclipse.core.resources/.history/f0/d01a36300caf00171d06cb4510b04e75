@@ -1,0 +1,46 @@
+package com.neusoft.dao.impl;
+
+import java.util.List;
+
+import com.neusoft.dao.AconsumerDao;
+import com.neusoft.dao.DaoException;
+
+public class AconsumerDaoImpl implements AconsumerDao {
+
+	@Override
+	public int updateConsumerAll(AconsumerDao ucon) throws DaoException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int insertConsumer(AconsumerDao con) throws DaoException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int deleteConsumer(Integer id) throws DaoException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int updateConsumer(AconsumerDao ucon) throws DaoException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int updateLoginname(String loginname, int id) throws DaoException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<AconsumerDao> getConsumerList() throws DaoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

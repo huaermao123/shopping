@@ -1,0 +1,31 @@
+package com.neusoft.dao;
+
+import java.util.List;
+
+import com.neusoft.entity.Cate;
+
+public interface RuleDao {
+
+	/**
+	   * 添加
+	   */
+		public int insert(RuleDao  rule)throws DaoException;
+		
+		/**
+		 * 删除 父节点
+		 */
+		public int deleteRuleDao(Integer id)throws DaoException;
+		
+		
+		/**
+		 * 修改
+		 */
+		public int updateCate(Rule cate)throws DaoException;
+
+		/**
+		 * 查询所有的
+		 */
+		public List<Cate> getCateList()throws DaoException;
+		
+	
+}

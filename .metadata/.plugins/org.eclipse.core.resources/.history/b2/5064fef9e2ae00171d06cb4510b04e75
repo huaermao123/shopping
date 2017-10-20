@@ -1,0 +1,18 @@
+package com.neusoft.services;
+
+import com.neusoft.dao.DaoException;
+import com.neusoft.dao.impl.AddressDaoImpl;
+import com.neusoft.entity.Address;
+
+public class AdderssService {
+
+	AddressDaoImpl adder=new AddressDaoImpl();
+	//Ìí¼Ó
+	public int insertAddr(Address addr) throws DaoException {
+		return adder.insertAddr(addr);
+	}
+	
+	
+	
+	
+}

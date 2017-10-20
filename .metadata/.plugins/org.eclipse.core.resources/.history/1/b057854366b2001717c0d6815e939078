@@ -1,0 +1,81 @@
+package com.neusoft.dao.impl;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.commons.dbutils.DbUtils;
+import org.apache.commons.dbutils.QueryRunner;
+
+import com.neusoft.dao.DaoException;
+import com.neusoft.dao.Shoppinginfo_consumerDao;
+
+import com.neusoft.entity.Shoppinginfo_consumer;
+import com.neusoft.utils.ConnectionFactory;
+
+public class Shoppinginfo_consumerDaoImpl implements Shoppinginfo_consumerDao {
+	  //添加
+	QueryRunner qr = new QueryRunner();
+
+	@Override
+	public int insertShop(Shoppinginfo_consumer shop) throws DaoException {
+		//获取连接
+		  Connection conn=ConnectionFactory.getInstance().getConnection();
+		//准备语句
+		   String sql="insert into shoppinginfo_consumer(aid,nickname,money,lasttime )value(?,?,?,?)";
+		   try {
+			  return qr.update(conn,sql,shop.getAid(),shop.getNickname(),shop.getMoney(),shop.getLasttime());		
+		  }catch(SQLException e) {
+			  e.printStackTrace();
+			    throw new  DaoException("添加出错",e);
+		        }finally {
+			    DbUtils.closeQuietly(conn);
+		    }
+	}
+	//删除
+
+	@Override
+	public int deleteShop(Integer id) throws DaoException {
+		//获取连接
+		Connection conn=ConnectionFactory.getInstance().getConnection();
+		       //准备语句
+		 String sql="delete from shoppinginfo_consumer where aid=?";
+		     try {
+		  		return qr.update(conn,sql,id);		
+		  		}catch(SQLException e) {
+		  			e.printStackTrace();
+		  			throw new  DaoException("删除出错",e);
+		  		}finally {
+		  			DbUtils.closeQuietly(conn);
+		  	}
+	}
+	public static void main(String[] args) {
+		Shoppinginfo_consumer sho=new Shoppinginfo_consumer(56,"看的");
+		int ddd=new Shoppinginfo_consumerDaoImpl().updateShop(sho);
+		System.out.println(ddd);
+	}
+    //修改
+	@Override
+	public int updateShop(Shoppinginfo_consumer sho) throws DaoException {
+		//获取连接
+		Connection conn=ConnectionFactory.getInstance().getConnection();
+       //准备语句
+		String sql="update shoppinginfo_consumer set nickname=? where aid=?";
+	     try {
+	    	 return qr.update(conn,sql,sho.getNickname(),sho.getAid());
+	     }catch(SQLException e) {
+	  			e.printStackTrace();
+	  			throw new  DaoException("修改出错",e);
+	  		}finally {
+	  			DbUtils.closeQuietly(conn);
+	  		}
+	}
+
+	@Override
+	public List<Shoppinginfo_consumer> getAddrList() throws DaoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+}

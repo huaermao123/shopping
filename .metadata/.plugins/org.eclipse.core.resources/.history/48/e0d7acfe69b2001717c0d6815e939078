@@ -1,0 +1,58 @@
+package com.neusoft.test;
+
+import java.util.List;
+
+import com.neusoft.dao.AccountDao;
+import com.neusoft.dao.DaoFactory;
+import com.neusoft.dao.Shoppinginfo_consumerDao;
+import com.neusoft.dao.impl.Shoppinginfo_consumerDaoImpl;
+import com.neusoft.entity.Account;
+import com.neusoft.entity.Shoppinginfo_consumer;
+
+public class Shippinginfo_consumerTest {
+	
+public static void main(String[] args) {
+	//insert();
+	//del();
+	//update();
+	all();
+}
+//添加
+public static void insert() {
+	Shoppinginfo_consumer shop=new Shoppinginfo_consumer(56,"华二达", 5455, 515151515);
+	int dd=new Shoppinginfo_consumerDaoImpl().insertShop(shop);
+	System.out.println(dd);
+}
+//删除
+public static void del() {
+	int dd=new Shoppinginfo_consumerDaoImpl().deleteShop(7);
+	System.out.println(dd);
+}
+//修改
+public static void update() {
+	Shoppinginfo_consumer sho=new Shoppinginfo_consumer(56,"看的");
+	int ddd=new Shoppinginfo_consumerDaoImpl().updateShop(sho);
+	System.out.println(ddd);
+}
+//查询
+public static void all() {
+	List<Shoppinginfo_consumer>  gg=new Shoppinginfo_consumerDaoImpl().getShopList();
+ System.out.println(gg);
+}
+//查询 aid
+public static  void aidall() {
+	Shoppinginfo_consumerDaoImpl gg=new Shoppinginfo_consumerDaoImpl();
+     gg.update(time)
+	
+}
+/*AccountDao accDao=DaoFactory.getInstance("accDao", AccountDao.class);
+
+Account acc=accDao.doLogin("admin", "admin");
+ if(acc!=null) {
+	 acc.setLogindate(System.currentTimeMillis());
+	 acc.setIp("10.25.151.170");
+	 accDao.update(acc);
+ }
+*/
+
+}

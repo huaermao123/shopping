@@ -1,0 +1,70 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<form action="" method="post">
+		<div style="margin-left: 50px; padding-bottom: 10px;">
+		        时间：<input type="text" />至<input type="text" />
+			<button>查询</button>
+		</div>
+		<table  style="text-align: center;" border="1px" width="1000px" height="30px">
+			<tr>
+				<td colspan="9">订单表</td>
+			</tr>
+		
+			<tr>
+				<td>订单id</td>
+				<td>订单编号</td>
+				<td>订单状态
+					<br/>
+					1:未付款2:已付款
+					<br/>
+					3:已发货 4:已完成</td>
+				<td>支付方式1:在线支付 2:货到付款</td>
+				<td>下单时间</td>
+			    <td>付款时间</td>
+			    <td>收件人信息</td>
+			    <td>备注信息</td>
+			   
+			    <td>操作</td>
+			</tr>
+				 <%
+			 Object obj5=request.getAttribute("cates");
+			 if(obj5!=null)
+			 {
+	        	  PageModel<Product> pageModel=(PageModel<Product>)obj5;
+	        	  for(int i=0;i<pageModel.getDatas().size();i++){
+	        		  
+	        		  %>
+			<tr>
+				<td>订单id</td>
+				<td>订单编号</td>
+				<td>
+					1
+				</td>
+				<td>2</td>
+				<td>20170512</td>
+			    <td>20170512</td>
+			    <td>1</td>
+			    <td>35fj</td>
+				<td><a href="updateOrd.jsp">修改</a>
+					
+				<a href="#">删除</a></td>
+			</tr>
+						 <%  
+	        	  }  
+	        		  
+	        	  }
+			 
+			 %>
+			
+		</table>
+		</form>
+	</body>
+</html>
